@@ -8,6 +8,21 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      const isPages = window.location.hostname.endsWith("github.io");
+      const base = isPages ? "/podo360-landing" : "";
+
+      if (isPages) {
+        const stylesheet = document.createElement("link");
+        stylesheet.rel = "stylesheet";
+        stylesheet.href = `${base}/assets/index-UdtoSdND.css`;
+        document.head.appendChild(stylesheet);
+      }
+
+      const script = document.createElement("script");
+      script.type = "module";
+      script.src = isPages ? `${base}/assets/index-DD9x3wZN.js` : "/src/main.tsx";
+      document.body.appendChild(script);
+    </script>
   </body>
 </html>
